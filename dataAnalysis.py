@@ -8,6 +8,11 @@ print(df.head())
 
 year = df["Year"]
 sales = df["Sales_Millions"]
+album = df["Album"]
+artist = df["Artist"]
+decade = df["Decade"]
+country = df["Country"]
+genre = df["Genre"]
 
 oldest = df[df["Year"] == year.min()]
 newest = df[df["Year"] == year.max()]["Album"]
@@ -19,3 +24,11 @@ print(oldest)
 print(newest)
 print(lowest_sales)
 print(highest_sales)
+
+print("\n")
+plt.plot(sales, genre)
+plt.xlabel("Sales (Millions)")
+plt.ylabel("Genre")
+plt.title("Album Sales by Genre")
+plt.show()
+plt.savefig("sales_by_genre.png")
